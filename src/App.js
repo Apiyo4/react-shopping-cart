@@ -15,12 +15,10 @@ function App() {
 	const [cart, setCart] = useLocalStorage("cart", []);
 
 	const addItem = item => {
-		// console.log('item:', item )
 		// add the given item to the cart
 		const clickedItem = products.filter(product=>{
 			return product.id===item.id;
 		})
-		console.log("clickedItem:", clickedItem)
 		setCart(clickedItem);
 		
 	};
@@ -28,7 +26,7 @@ function App() {
 	const removeItem = (id) => {
 		
 	 return	setCart(cart.filter(item=>{
-		 return item.id != item.id
+		 return item.id !== item.id
 	 }));
 	}
 	
