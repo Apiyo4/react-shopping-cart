@@ -12,11 +12,19 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
+		// console.log('item:', item )
 		// add the given item to the cart
+		const clickedItem = products.filter(product=>{
+			return product.id===item.id;
+		})
+		console.log("clickedItem:", clickedItem)
+		setCart(clickedItem);
+		
 	};
 
 	return (
 		<div className="App">
+			{console.log(cart)}
 			<Navigation cart={cart} />
 
 			{/* Routes */}
