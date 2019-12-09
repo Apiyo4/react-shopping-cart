@@ -27,25 +27,25 @@ function App() {
 		<div className="App">
 			{console.log(cart)}
 			<Navigation cart={cart} />
-			<ProductContext.Provider>
+			<ProductContext.Provider value = {{products, addItem}}>
 				{/* Routes */}
-			<Route
-				exact
-				path="/"
-				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
-				)}
-			/>
+				<Route
+					exact
+					path="/"
+					render={() => (
+						<Products
+							products={products}
+							addItem={addItem}
+						/>
+					)}
+				/>
 
-			<Route
-				path="/cart"
-				render={() => <ShoppingCart cart={cart} />}
-			/>
+				<Route
+					path="/cart"
+					render={() => <ShoppingCart cart={cart} />}
+				/>
 
-				
+					
 			</ProductContext.Provider>
 			
 		</div>
