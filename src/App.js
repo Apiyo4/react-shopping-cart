@@ -32,12 +32,7 @@ function App() {
 				<Route
 					exact
 					path="/"
-					render={() => (
-						<Products
-							products={products}
-							addItem={addItem}
-						/>
-					)}
+					components = {Products}
 				/>
 
 				<Route
